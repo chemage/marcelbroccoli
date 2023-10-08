@@ -1,3 +1,3 @@
-from .errorcodes import ErrorCodes, errorcode
-from .functions import *
-from .logger import *
+from marcelbroccoli.errorcodes import ErrorCodes, errorcode
+from marcelbroccoli.functions import *
+from marcelbroccoli.logger import *

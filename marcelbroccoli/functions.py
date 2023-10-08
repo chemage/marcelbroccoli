@@ -16,7 +16,7 @@ from datetime import datetime
 
 # current module
 # from errorcodes import ErrorCodes, errorcode
-from .logger import *
+from marcelbroccoli.logger import *
 # from . import *
 
 

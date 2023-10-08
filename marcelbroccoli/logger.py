@@ -14,7 +14,7 @@ import colorama
 # custom modules
 
 # current module
-from .errorcodes import ErrorCodes, errorcode
+from marcelbroccoli.errorcodes import ErrorCodes, errorcode
 # from functions import starts_with
 # from . import logger
 
