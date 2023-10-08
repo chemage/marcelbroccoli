@@ -26,20 +26,21 @@ Default branch is `dev` for development and updates of module.
 
 Example for release 1.0.0.
 ```bash
+release=1.0.0
 # Create and checkout a new "release" branch.
-git checkout -b release-1.0.0 dev
+git checkout -b release-$release dev
 # Finalize code and update version in setup.py
 # Merge final version of release into `dev` and `main`.
 git checkout main
-git merge release-1.0.0
+git merge release-$release
 git push
 git checkout dev
-git merge release-1.0.0
+git merge release-$release
 git push
-# Delete branch release-1.0.0
-git branch -d release-1.0.0
+# Delete branch release-$release
+git branch -d release-$release
 # Create and push tag to main branch
-git tag -a 1.0.0 -m "first release" main
+git tag -a $release -m "first release" main
 git push --tags
 git push
 ```
