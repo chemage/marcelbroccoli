@@ -70,6 +70,11 @@ def log(msg:str, logger=logger):
     elif functions.starts_with(msg, 'successfully', False):
         if logger is not None: logger.info(msg)
         print(f"{colorama.Fore.GREEN}{msg}{colorama.Style.RESET_ALL}")
+    
+    # green
+    elif functions.starts_with(msg, 'debug', False):
+        if logger is not None: logger.debug(msg)
+        print(f"{colorama.Fore.BLUE}{msg}{colorama.Style.RESET_ALL}")
 
     # no color
     else:

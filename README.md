@@ -40,9 +40,8 @@ git push
 # Delete branch release-$release
 git branch -d release-$release
 # Create and push tag to main branch
-git tag -a $release -m "first release" main
+git tag -a $release -m "correct import issues" main
 git push --tags
-git push
 ```
 
 Create a new release on GitHub with the created tag.
