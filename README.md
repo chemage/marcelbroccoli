@@ -8,13 +8,13 @@ Marcel's broccoli module for simplifying his coding.
 ### Structure
 
 ```
--Marcel
- |-functions            Custom functions
+-marcelbroccoli
+ |-functions.py         Custom functions
    |-starts_with        Check if string starts with pattern (case sensitive or case insensitive)
    |-str2datetime       Convert from all date and date time sources to date object
    |-datetime2str       Convert date to string in HomeBank format
- |-logger               Custom logging
-   |-mylogger           Logger object
+ |-logger.py            Custom logging
+   |-logger             Logger object
    |-setup              Setup custom logger
    |-log                Write log entry
 ```
