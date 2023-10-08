@@ -1,0 +1,5 @@
+__pycache__
+marcel.egg-info
+build
+.venv
+.log
