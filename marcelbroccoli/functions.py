@@ -16,14 +16,14 @@ from datetime import datetime
 
 # current module
 # from errorcodes import ErrorCodes, errorcode
-from marcelbroccoli.logger import *
+from . import logger
 # from . import *
 
 
 '''
 Read the app access token from .env file
 '''
-def load_env(logger=logger):
+def load_env(logger=logger.logger):
   try:
     dotenv.load_dotenv()
     return ErrorCodes.SUCCESS
