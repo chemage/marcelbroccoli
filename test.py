@@ -9,8 +9,8 @@ from datetime import datetime
 # pip modules
 
 # custom modules
-import marcel.functions
-from marcel.functions import starts_with, str2datetime
+import marcelbroccoli.functions
+from marcelbroccoli.functions import starts_with, str2datetime
 # from Marcel.marcel.functions import starts_with, str2datetime
 
 
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     p2 = "bonjour"
 
     print(s, p1)
-    print("Case sensitive: True = ", marcel.functions.starts_with(s, p1, True))
+    print("Case sensitive: True = ", marcelbroccoli.functions.starts_with(s, p1, True))
     print(s, p2)
     print("Case sensitive: False = ", starts_with(s, p2, False))
     print(s, p2)

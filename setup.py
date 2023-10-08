@@ -8,6 +8,6 @@ setup(
     author="Marcel Gerber",
     author_email="me@marcelgerber.ch",
     license="none",
-    packages=["marcel-broccoli"],
+    packages=["marcelbroccoli"],
     zip_safe=False
 )
