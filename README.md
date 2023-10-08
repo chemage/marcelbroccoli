@@ -1,8 +1,7 @@
-# python_modules
+# Marcel Broccoli
 
-## TODO
+Marcel's broccoli module for simplifying his coding.
 
-Take custom module from BNC and split into submodules.
 
 ## Module
 
