@@ -28,7 +28,7 @@ Example for release 1.0.0.
 ```bash
 # Create and checkout a new "release" branch.
 git checkout -b release-1.0.0 dev
-# Finalize code.
+# Finalize code and update version in setup.py
 # Merge final version of release into `dev` and `main`.
 git checkout main
 git merge release-1.0.0

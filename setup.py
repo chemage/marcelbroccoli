@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="marcel",
-    version="1.0.0",
+    version="1.0.1",
     description="Marcel's custom functions",
     url="https://github.com/chemage/python_modules",
     author="Marcel Gerber",
