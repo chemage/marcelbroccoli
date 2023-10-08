@@ -2,12 +2,12 @@ from setuptools import setup
 
 setup(
     name="marcel",
-    version="0.1",
+    version="1.0.0",
     description="Marcel's custom functions",
     url="https://github.com/chemage/python_modules",
     author="Marcel Gerber",
     author_email="me@marcelgerber.ch",
     license="none",
-    packages=["."],
+    packages=["marcel-broccoli"],
     zip_safe=False
 )

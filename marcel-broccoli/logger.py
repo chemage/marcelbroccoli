@@ -18,11 +18,6 @@ from .errorcodes import ErrorCodes, errorcode
 # from functions import starts_with
 # from . import logger
 
-# meta data
-__author__ = "Marcel Gerber"
-__date__ = "2023-10-08"
-__version__ = "0.1.0"
-
 
 # logging definitions
 logger = getLogger(__name__)

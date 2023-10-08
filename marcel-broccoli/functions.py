@@ -19,11 +19,6 @@ from datetime import datetime
 from .logger import *
 # from . import *
 
-# meta data
-__author__ = "Marcel Gerber"
-__date__ = "2023-10-08"
-__version__ = "0.1.0"
-
 
 '''
 Read the app access token from .env file
