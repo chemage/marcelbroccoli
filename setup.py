@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(
-    name="marcel",
-    version="1.0.3",
+    name="marcelbroccoli",
+    version="1.0.4",
     description="Marcel's custom functions",
-    url="https://github.com/chemage/python_modules",
+    url="https://github.com/chemage/marcelbroccoli",
     author="Marcel Gerber",
     author_email="me@marcelgerber.ch",
     license="none",
