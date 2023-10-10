@@ -27,7 +27,7 @@ LOG_BACKUP_COUNT = 4
 '''
 Setup log with custom settings.
 '''
-def setup(logger:object, logfile:str, name:str=None, dtformat="%Y-%m-%d %H:%M:%s.%f", level:str=LOG_LEVEL, 
+def setup(logger:object, logfile:str, name:str=None, dtformat="%Y-%m-%d %H:%M:%S.%f", level:str=LOG_LEVEL, 
           maxbytes=LOG_MAX_BYTES, backupcount=LOG_BACKUP_COUNT,
           logformat='%(asctime)s - %(name)s - %(levelname)s - %(message)s', errorcode=ec.errorcode):
   
@@ -39,7 +39,7 @@ def setup(logger:object, logfile:str, name:str=None, dtformat="%Y-%m-%d %H:%M:%s
 
   except Exception as e:
     print("Error: could not setup logger. {}".format(e))
-    errorcode = ErrorCodes.LOG_SETUP_ERROR
+    errorcode =ec.ErrorCodes.LOG_SETUP_ERROR
 
   logger.info("-------------------------------------------------------------------------------")
   return errorcode
@@ -48,7 +48,7 @@ def setup(logger:object, logfile:str, name:str=None, dtformat="%Y-%m-%d %H:%M:%s
 '''
 Write log entry if logger is set, otherwise print colored console message.
 '''
-def log(msg:str, logger=logger):
+def log(msg:str, logger:object=logger):
     # magenta
     if functions.starts_with(msg, 'critical', False):
         if logger is not None: logger.critical(msg)
