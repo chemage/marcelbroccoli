@@ -3,21 +3,14 @@
 
 # system modules
 from __future__ import print_function
-from datetime import datetime 
-# from logging import getLogger, INFO, DEBUG, WARNING, ERROR, CRITICAL
+from datetime import datetime
+import dotenv
 
 # pip modules
 # import colorama
 
-# custom modules
-# from marcel.functions import startswith
-
-# custom modules
-
 # current module
-# from errorcodes import ErrorCodes, errorcode
 from . import logger
-# from . import *
 
 
 '''
