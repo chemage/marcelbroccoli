@@ -31,7 +31,7 @@ release=1.0.0
 git checkout -b release-$release dev
 # Finalize code and update version in setup.py
 git add setup.py marcelbroccoli/version.py
-git commit -m "update version"
+git commit -m "update version $release"
 # Merge final version of release into `dev` and `main`.
 git checkout main
 git merge release-$release
