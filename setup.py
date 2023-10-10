@@ -9,6 +9,6 @@ setup(
     author_email="me@marcelgerber.ch",
     license="none",
     packages=["marcelbroccoli"],
-    install_requires=['python_dotenv', 'colorama']
+    install_requires=['python_dotenv', 'colorama'],
     zip_safe=False
 )
