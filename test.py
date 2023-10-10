@@ -3,27 +3,41 @@
 
 # system modules
 from __future__ import print_function
-from datetime import datetime 
-# from logging import getLogger, INFO, DEBUG, WARNING, ERROR, CRITICAL
+from datetime import datetime
+import logging
+import os
 
 # pip modules
 
 # custom modules
-import marcelbroccoli.functions
-from marcelbroccoli.functions import starts_with, str2datetime
-# from Marcel.marcel.functions import starts_with, str2datetime
+import marcelbroccoli.errorcodes as marcelec
+import marcelbroccoli.functions as marcelfn
+import marcelbroccoli.logger as marcellg
 
 
 if __name__ == "__main__":
+
+    # set working dir
+    working_dir = os.path.abspath(os.path.dirname(__file__))
+    os.chdir(working_dir)
+
     s = "Bonjour, je m'appelle Marcel."
     p1 = "Bonjour"
     p2 = "bonjour"
 
     print(s, p1)
-    print("Case sensitive: True = ", marcelbroccoli.functions.starts_with(s, p1, True))
+    print("Case sensitive: True = ", marcelfn.starts_with(s, p1, True))
     print(s, p2)
-    print("Case sensitive: False = ", starts_with(s, p2, False))
+    print("Case sensitive: False = ", marcelfn.starts_with(s, p2, False))
     print(s, p2)
-    print("Case sensitive: True = ", starts_with(s, p2, True))
+    print("Case sensitive: True = ", marcelfn.starts_with(s, p2, True))
 
-    str2datetime("2023-10-07 23:56:34.0000")
+    marcelfn.str2datetime("2023-10-07 23:56:34.0000")
+
+
+    marcelfn.load_env()
+
+    marcellg.setup(marcellg.logger, "test.log", level=logging.INFO)
+    marcellg.log("Warning: this is a warning!")
+
+    marcellg.log("From .env: '{}'.".format(os.environ['TEST']))
