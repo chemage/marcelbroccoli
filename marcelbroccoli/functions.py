@@ -10,6 +10,7 @@ import dotenv
 # import colorama
 
 # current module
+from . import errorcodes
 from . import logger
 
 
@@ -19,10 +20,10 @@ Read the app access token from .env file
 def load_env(logger=logger.logger):
   try:
     dotenv.load_dotenv()
-    return ErrorCodes.SUCCESS
+    return errorcodes.ErrorCodes.SUCCESS
   except Exception as e:
-    log("Error: could not load '.env' file. {}".format(e), logger=logger)
-    return ErrorCodes.ENV_LOAD_ERROR
+    logger.log("Error: could not load '.env' file. {}".format(e), logger=logger)
+    return errorcodes.ErrorCodes.ENV_LOAD_ERROR
 
 
 '''

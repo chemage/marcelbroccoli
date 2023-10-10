@@ -33,7 +33,7 @@ def setup(logger:object, logfile:str, name:str=None, dtformat="%Y-%m-%d %H:%M:%s
   
   try:
     handler = logging.handlers.RotatingFileHandler(logfile, mode='a', encoding='utf-8', maxBytes=maxbytes, backupCount=backupcount)
-    handler.setFormatter(Formatter(logformat, datefmt=dtformat))
+    handler.setFormatter(logging.Formatter(logformat, datefmt=dtformat))
     logger.addHandler(handler)
     logger.setLevel(level)
 
