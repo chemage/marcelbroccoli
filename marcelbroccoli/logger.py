@@ -3,6 +3,7 @@
 
 # system modules
 # from __future__ import print_function
+import datetime
 import logging
 import logging.handlers
 
@@ -25,6 +26,23 @@ LOG_BACKUP_COUNT = 4
 
 
 '''
+Custom time formatting to workaround compatibility issue between Linux and Windows
+with the underlying C library interpreting time formatting.
+'''
+def custom_time(*args):
+    return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+
+
+'''
+Custom formatter to workaround compatibility issue between Linux and Windows
+with the underlying C library interpreting time formatting.
+'''
+class CustomFormatter(logging.Formatter):
+    def formatTime(self, record, datefmt=None):
+        return custom_time()
+
+
+'''
 Setup log with custom settings.
 '''
 def setup(logger:object, logfile:str, name:str=None, dtformat="%Y-%m-%d %H:%M:%S.%f", level:str=LOG_LEVEL, 
@@ -33,7 +51,7 @@ def setup(logger:object, logfile:str, name:str=None, dtformat="%Y-%m-%d %H:%M:%S
   
   try:
     handler = logging.handlers.RotatingFileHandler(logfile, mode='a', encoding='utf-8', maxBytes=maxbytes, backupCount=backupcount)
-    handler.setFormatter(logging.Formatter(logformat, datefmt=dtformat))
+    handler.setFormatter(CustomFormatter(logformat, datefmt=dtformat))
     logger.addHandler(handler)
     logger.setLevel(level)
 
