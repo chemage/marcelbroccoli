@@ -4,10 +4,10 @@
 # system modules
 from __future__ import print_function
 from datetime import datetime
-import dotenv
+import logging
 
 # pip modules
-# import colorama
+import dotenv
 
 # current module
 from . import errorcodes
@@ -18,11 +18,13 @@ from . import logger
 Read the app access token from .env file
 '''
 def load_env(logger=logger.logger):
+# def load_env():
   try:
     dotenv.load_dotenv()
+    logger.debug("Successfully loaded '.env'.")
     return errorcodes.ErrorCodes.SUCCESS
   except Exception as e:
-    logger.log("Error: could not load '.env' file. {}".format(e), logger=logger)
+    logger.error("Could not load '.env' file. {}".format(e))
     return errorcodes.ErrorCodes.ENV_LOAD_ERROR
 
 
