@@ -19,7 +19,7 @@ from . import functions
 
 
 # logging definitions
-logger = logging.getLogger(__name__)
+logger = None #logging.getLogger(__name__)
 LOG_LEVEL = logging.ERROR
 LOG_MAX_BYTES = 2000000
 LOG_BACKUP_COUNT = 4
@@ -50,6 +50,7 @@ def setup(logger:object, logfile:str, name:str=None, dtformat="%Y-%m-%d %H:%M:%S
           logformat='%(asctime)s - %(name)s - %(levelname)s - %(message)s', errorcode=ec.errorcode):
   
   try:
+    logger = logging.getLogger(name)
     handler = logging.handlers.RotatingFileHandler(logfile, mode='a', encoding='utf-8', maxBytes=maxbytes, backupCount=backupcount)
     handler.setFormatter(CustomFormatter(logformat, datefmt=dtformat))
     logger.addHandler(handler)
