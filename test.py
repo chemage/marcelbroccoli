@@ -37,7 +37,3 @@ if __name__ == "__main__":
 
     marcelfn.load_env()
 
-    marcellg.setup(marcellg.logger, "test.log", level=logging.INFO)
-    marcellg.log("Warning: this is a warning!")
-
-    marcellg.log("From .env: '{}'.".format(os.environ['TEST']))

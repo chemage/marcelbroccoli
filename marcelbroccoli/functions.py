@@ -20,11 +20,13 @@ Read the app access token from .env file
 def load_env(logger=logger.logger):
 # def load_env():
   try:
-    dotenv.load_dotenv()
-    logger.debug("Successfully loaded '.env'.")
+    if dotenv.load_dotenv():
+        logger.logger.debug("Successfully loaded '.env'.")
+    else:
+        logger.logger.error("There was an issue loading the '.env' file.")
     return errorcodes.ErrorCodes.SUCCESS
   except Exception as e:
-    logger.error("Could not load '.env' file. {}".format(e))
+    logger.logger.error("Could not load '.env' file. {}".format(e))
     return errorcodes.ErrorCodes.ENV_LOAD_ERROR
 
 
@@ -35,6 +37,9 @@ Test if a string starts with pattern
 - casesensitive: if set to false, set source and value to lower (default: True)
 '''
 def starts_with(str:str, pattern:str, casesensitive:bool=True):
+    str = str(str)
+    pattern = str(pattern)
+
     # check if string starts with pattern
     if len(pattern) <= len(str):
         if casesensitive:
