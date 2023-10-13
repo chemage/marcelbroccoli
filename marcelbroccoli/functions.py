@@ -21,12 +21,12 @@ def load_env(logger=logger.logger):
 # def load_env():
   try:
     if dotenv.load_dotenv():
-        logger.logger.debug("Successfully loaded '.env'.")
+        logger.debug("Successfully loaded '.env'.")
     else:
-        logger.logger.error("There was an issue loading the '.env' file.")
+        logger.error("There was an issue loading the '.env' file.")
     return errorcodes.ErrorCodes.SUCCESS
   except Exception as e:
-    logger.logger.error("Could not load '.env' file. {}".format(e))
+    logger.error("Could not load '.env' file. {}".format(e))
     return errorcodes.ErrorCodes.ENV_LOAD_ERROR
 
 
@@ -36,16 +36,16 @@ Test if a string starts with pattern
 - pattern: string to search for in source start
 - casesensitive: if set to false, set source and value to lower (default: True)
 '''
-def starts_with(str:str, pattern:str, casesensitive:bool=True):
-    str = str(str)
+def starts_with(string:str, pattern:str, casesensitive:bool=True):
+    string = str(string)
     pattern = str(pattern)
 
     # check if string starts with pattern
-    if len(pattern) <= len(str):
+    if len(pattern) <= len(string):
         if casesensitive:
-            return str[0:len(pattern)] == pattern
+            return string[0:len(pattern)] == pattern
         else:
-            return str[0:len(pattern)].lower() == pattern.lower()
+            return string[0:len(pattern)].lower() == pattern.lower()
     
     # string is shorter than pattern
     else:
