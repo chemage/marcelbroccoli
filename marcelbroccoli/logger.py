@@ -70,7 +70,7 @@ class CustomLogger(logging.Logger):
     '''
     Write log entry if logger is set, otherwise print colored console message.
     '''
-    def log(self, msg:str, level:int):
+    def log(self, level:int, msg:str):
         if level == logging.CRITICAL: self.critical(msg)
         elif level == logging.ERROR: self.critical(msg)
         elif level == logging.WARNING: self.warning(msg)
@@ -144,13 +144,13 @@ if __name__ == "__main__":
     log_file = os.path.abspath('test_log.log')
 
     # setup logger
-    errorcode = marcellg.logger.configure(logfile=log_file, name=__name__, level=logging.INFO, dtformat="%Y-%m-%d %H:%M:%S")
+    errorcode = logger.configure(logfile=log_file, name=__name__, level=logging.INFO, dtformat="%Y-%m-%d %H:%M:%S")
 
     # start log
-    marcellg.logger.log("Welcome to the Logger Test Script.", logging.INFO)
-    marcellg.logger.log("Log file is '{}'".format(log_file), logging.INFO)
+    logger.info("Welcome to the Logger Test Script.")
+    logger.info("Log file is '{}'".format(log_file))
     print("Log level: {}".format(marcellg.logger.level))
 
-    marcellg.logger.log("Script execution completed with exit code {}.".format(errorcode), logging.INFO)
+    logger.info("Script execution completed with exit code {}.".format(errorcode))
     sys.exit(errorcode)
 
