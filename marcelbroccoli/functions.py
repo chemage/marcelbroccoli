@@ -31,6 +31,20 @@ def load_env(logger=logger.logger):
 
 
 '''
+Load configuration file
+'''
+def load_config_file(cfg_file, logger=logger.logger):
+	cfg = None
+	try:
+		with open(cfg_file) as f:
+			cfg = json.load(f)
+	except Exception as e:
+		logger.error("Error: could not load configuration file '{}'. {}".format(cfg_file, e))
+
+	return cfg
+
+
+'''
 Test if a string starts with pattern
 - string: string to search in
 - pattern: string to search for in source start
