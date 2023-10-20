@@ -18,15 +18,17 @@ from . import logger
 Read the app access token from .env file
 '''
 def load_env(logger=logger.logger):
-	try:
-		if dotenv.load_dotenv():
-			logger.debug("Successfully loaded '.env'.")
-		else:
-			logger.error("There was an issue loading the '.env' file.")
-			return errorcodes.ErrorCodes.SUCCESS
-	except Exception as e:
-		logger.error("Could not load '.env' file. {}".format(e))
-	return errorcodes.ErrorCodes.ENV_LOAD_ERROR
+    errorcode = errorcodes.ErrorCodes.SUCCESS
+    try:
+        if dotenv.load_dotenv():
+            logger.debug("Successfully loaded '.env'.")
+        else:
+            logger.error("There was an issue loading the '.env' file.")
+    except Exception as e:
+        logger.error("Could not load '.env' file. {}".format(e))
+        errorcode = errorcodes.ErrorCodes.ENV_LOAD_ERROR
+    
+    return errorcode
 
 
 '''
