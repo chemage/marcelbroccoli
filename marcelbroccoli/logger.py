@@ -127,6 +127,12 @@ logging.setLoggerClass(CustomLogger)
 logger = logging.getLogger(__name__)
 
 
+'''
+Fix Colorama for Windows
+'''
+if sys.platform == 'win32':
+    colorama.just_fix_windows_console()
+
     
 '''
 Main attraction!
