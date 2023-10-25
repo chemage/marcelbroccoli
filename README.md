@@ -48,7 +48,7 @@ git push
 # Delete branch release-$release
 git branch -d release-$release
 # Create and push tag to main branch
-git tag -a $release -m "correct import issues" main
+git tag -a $release -m "release $release" main
 git push --tags
 git status
 
