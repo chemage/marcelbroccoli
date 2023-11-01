@@ -3,6 +3,7 @@
 
 # system modules
 from datetime import datetime
+import json
 import os
 
 # current module
@@ -24,6 +25,20 @@ def set_working_dir(folder:str) -> str:
 	
 	# return working dir
 	return working_dir
+
+
+'''
+Write JSON to file
+'''
+def write_json_file(data, fname:str):
+	try:
+		with open(fname, 'w', encoding='utf-8') as json_file:
+			json.dump(data, json_file, ensure_ascii=False, indent=4)
+		errorcode = 0
+	except Exception as e:
+		logger.error("Error: could not dump JSON to file '{}'. {}".format(fname, e))
+		errorcode = -1
+	return errorcode
 
 
 '''
