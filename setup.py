@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="marcelbroccoli",
-    version="1.3.1",
+    version="1.4.0",
     description="Marcel's custom functions",
     url="https://github.com/chemage/marcelbroccoli",
     author="Marcel Gerber",
