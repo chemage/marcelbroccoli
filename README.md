@@ -15,6 +15,7 @@ Marcel's broccoli module for simplifying his coding.
    |-starts_with        Check if string starts with pattern (case sensitive or case insensitive)
    |-str2datetime       Convert from all date and date time sources to date object
    |-datetime2str       Convert date to string in HomeBank format
+   |-format_phone       Format phone number in Swiss and French style (depending on prefix)
  |-logger.py            Custom logging
    |-logger             Logger object
    |-setup              Setup custom logger
