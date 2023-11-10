@@ -91,7 +91,7 @@ Create a new release on GitHub with the created tag.
 1. use the link for `pip install`.
 
 ```bash
-pip install https://github.com/chemage/marcelbroccoli/archive/refs/tags/1.0.0.tar.gz
+pip install https://github.com/chemage/marcelbroccoli/archive/refs/tags/1.4.1.tar.gz
 ```
 
 
