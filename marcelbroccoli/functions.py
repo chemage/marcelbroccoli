@@ -97,9 +97,9 @@ Format telephone number to Swiss or French pattern.
 '''
 def format_phone(tel:str, spaces:bool=True):
 	phone_type = 'FIXE'
-	tel = tel.replace(' ', '')
+	tel = tel.replace(' ', '').replace('.', '').replace('-', '')
 	if tel.startswith('00'): tel = tel.replace('00', '+', 1)
-	if tel.startswith('0'): tel = tel.replace('0', '+41')
+	if tel.startswith('0'): tel = tel.replace('0', '+41', 1)
 	if tel.startswith('+41'):
 		if tel.startswith('+417'): phone_type = 'MOBILE'
 		if spaces: tel = f"{tel[0:3]} {tel[3:5]} {tel[5:8]} {tel[8:10]} {tel[10:12]}"
