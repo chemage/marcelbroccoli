@@ -90,6 +90,26 @@ def datetime2str(dt:datetime, format:str='%d-%m-%Y %H:%M:%s.%f') -> str:
 
 
 '''
+Format telephone number to Swiss or French pattern.
+
+- tel: string with a phone number
+- spaces: add spaces if true
+'''
+def format_phone(tel:str, spaces:bool=True):
+	phone_type = 'FIXE'
+	tel = tel.replace(' ', '').replace('.', '').replace('-', '')
+	if tel.startswith('00'): tel = tel.replace('00', '+', 1)
+	if tel.startswith('0'): tel = tel.replace('0', '+41', 1)
+	if tel.startswith('+41'):
+		if tel.startswith('+417'): phone_type = 'MOBILE'
+		if spaces: tel = f"{tel[0:3]} {tel[3:5]} {tel[5:8]} {tel[8:10]} {tel[10:12]}"
+	elif tel.startswith('+33'):
+		if tel.startswith('+336') or tel.startswith('+337'): phone_type = 'MOBILE'
+		if spaces: tel = f"{tel[0:3]} {tel[3:4]} {tel[4:6]} {tel[6:8]} {tel[8:10]} {tel[10:12]}"
+	return tel, phone_type
+
+
+'''
 Main attraction!
 '''
 if __name__ == "__main__":

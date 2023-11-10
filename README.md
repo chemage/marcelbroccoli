@@ -15,6 +15,7 @@ Marcel's broccoli module for simplifying his coding.
    |-starts_with        Check if string starts with pattern (case sensitive or case insensitive)
    |-str2datetime       Convert from all date and date time sources to date object
    |-datetime2str       Convert date to string in HomeBank format
+   |-format_phone       Format phone number in Swiss and French style (depending on prefix)
  |-logger.py            Custom logging
    |-logger             Logger object
    |-setup              Setup custom logger
@@ -24,6 +25,17 @@ Marcel's broccoli module for simplifying his coding.
 ### Documentation
 
 Click here for [module documentation](marcelbroccoli/README.md).
+
+
+## Install Module
+
+1. Jump to the release page of the repository on GitHub.
+1. Copy the tar.gz link of the release.
+1. use the link for `pip install`.
+
+```bash
+pip install https://github.com/chemage/marcelbroccoli/archive/refs/tags/1.4.2.tar.gz
+```
 
 
 ## Use Module
@@ -82,17 +94,6 @@ git status
 ```
 
 Create a new release on GitHub with the created tag.
-
-
-## Use Release in pip
-
-1. Jump to the release page of the repository on GitHub.
-1. Copy the tar.gz link of the release.
-1. use the link for `pip install`.
-
-```bash
-pip install https://github.com/chemage/marcelbroccoli/archive/refs/tags/1.0.0.tar.gz
-```
 
 
 ### Unrelated but Useful
