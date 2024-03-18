@@ -62,7 +62,7 @@ class CustomLogger(logging.Logger):
 
         except Exception as e:
             print("Error: could not setup logger. {}".format(e))
-            errorcode =ec.ErrorCodes.LOG_SETUP_ERROR
+            errorcode =ec.LOG_SETUP_ERROR
             raise e
 
         return errorcode
