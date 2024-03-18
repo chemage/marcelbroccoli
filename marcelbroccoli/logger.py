@@ -17,6 +17,7 @@ from . import functions
 
 
 # logging defaults
+DT_FORMAT = "%Y-%m-%d %H:%M:%S.%f"
 LOG_FORMAT = '%(asctime)s - %(filename)s - %(levelname)s - %(message)s'
 LOG_LEVEL = logging.ERROR
 LOG_MAX_BYTES = 2000000
@@ -45,7 +46,7 @@ class CustomLogger(logging.Logger):
     '''
     Setup log with custom settings.
     '''
-    def configure(self, logfile:str, name:str, dtformat="%Y-%m-%d %H:%M:%S.%f", level:str=LOG_LEVEL, 
+    def configure(self, logfile:str, name:str, dtformat=DT_FORMAT, level:str=LOG_LEVEL, 
               maxbytes=LOG_MAX_BYTES, backupcount=LOG_BACKUP_COUNT,
               logformat=LOG_FORMAT, errorcode=ec.errorcode):
 
