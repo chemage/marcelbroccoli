@@ -94,13 +94,13 @@ class CustomLogger(logging.Logger):
 
 
     def warning(self, msg:str):
-        logging.Logger.error(self, msg)
+        logging.Logger.warning(self, msg)
         if self.level <= logging.WARNING:
             print(f"{colorama.Fore.YELLOW}{msg}{colorama.Style.RESET_ALL}")
 
 
     def warn(self, msg:str):
-        logging.Logger.error(self, msg)
+        logging.Logger.warning(self, msg)
         if self.level <= logging.WARN:
             print(f"{colorama.Fore.YELLOW}{msg}{colorama.Style.RESET_ALL}")
 
