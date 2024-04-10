@@ -10,7 +10,6 @@ Marcel's broccoli module for simplifying his coding.
 ```
 -marcelbroccoli
  |-functions.py         Custom functions
-   |-load_env           Load a `.env` file and log an error if any
    |-load_config_file   Load a JSON configuration file and return config object
    |-starts_with        Check if string starts with pattern (case sensitive or case insensitive)
    |-str2datetime       Convert from all date and date time sources to date object

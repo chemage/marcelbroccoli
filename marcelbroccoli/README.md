@@ -4,10 +4,6 @@ Marcel's broccoli module for simplifying his coding.
 
 ## Functions
 
-### `load_env()`
-
-Load `.env` secret file.
-
 ### `load_config_file(cfg_file:str)`
 
 Load a JSON configuration and return a configuration object.
