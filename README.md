@@ -2,12 +2,11 @@
 
 Marcel's broccoli module for simplifying his coding.
 
-
 ## Module
 
 ### Structure
 
-```
+```text
 -marcelbroccoli
  |-functions.py         Custom functions
    |-load_config_file   Load a JSON configuration file and return config object
@@ -25,7 +24,6 @@ Marcel's broccoli module for simplifying his coding.
 
 Click here for [module documentation](marcelbroccoli/README.md).
 
-
 ## Install Module
 
 1. Jump to the release page of the repository on GitHub.
@@ -35,7 +33,6 @@ Click here for [module documentation](marcelbroccoli/README.md).
 ```bash
 pip install https://github.com/chemage/marcelbroccoli/archive/refs/tags/1.4.2.tar.gz
 ```
-
 
 ## Use Module
 
@@ -48,25 +45,25 @@ import marcelbroccoli.functions as marcelfn
 import marcelbroccoli.logger as marcellg
 
 if __name__ == '__main__':
-	# set working dir
-	working_dir = marcelfn.set_working_dir(__file__)
+  # set working dir
+  working_dir = marcelfn.set_working_dir(__file__)
 
   # load config
-	cfg_file = os.path.join(working_dir, 'config.json')
-	logger.info("Load configuration file '{}'.".format(cfg_file))
-	config.data = config.load_config_file(cfg_file)
-	if config.data is None: errorcode = ERR_LOADING_CONFIG
+  cfg_file = os.path.join(working_dir, 'config.json')
+  logger.info("Load configuration file '{}'.".format(cfg_file))
+  config.data = config.load_config_file(cfg_file)
+  if config.data is None: errorcode = ERR_LOADING_CONFIG
 
   # access config variable
   print("my variable: ", config.data['my_cfg_var'])
 ```
-
 
 ## Manage Releases
 
 Default branch is `dev` for development and updates of module.
 
 Example for release 1.0.0.
+
 ```bash
 release=1.0.0
 # Create and checkout a new "release" branch.
@@ -94,7 +91,6 @@ git status
 
 Create a new release on GitHub with the created tag.
 
-
 ### Unrelated but Useful
 
 ## Setup SSH key for MingW
@@ -104,7 +100,7 @@ came up. It was easier than using the TortoiseGit GUI all the time.
 
 Setup a `config` file as follows.
 
-```
+```text
 Host github.com-chemage
   HostName github.com
   IdentityFile ~/.ssh/<your-identity-file>-openssh.ppk
@@ -125,7 +121,7 @@ One more thing, is to set the correct upstream.
 git branch --set-upstream-to origin-cmd
 ```
 
-That's it. 
+That's it.
 
 Now you can push and pull from MingW.
 
