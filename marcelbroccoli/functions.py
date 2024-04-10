@@ -14,7 +14,7 @@ from . import logger
 '''
 Load configuration file.
 '''
-def load_config_file(cfg_file:str):
+def load_config_file(cfg_file:str) -> json:
   cfg = None
   try:
     with open(cfg_file) as f:
@@ -127,6 +127,10 @@ def format_phone(tel:str, spaces:bool=True):
 Main attraction!
 '''
 if __name__ == "__main__":
+
+	cfg = load_config_file('config.json')
+	print(f"config value of 'test': {cfg['test']}")
+
 	s = "Bonjour, je m'appelle Marcel."
 	p1 = "Bonjour"
 	p2 = "bonjour"
