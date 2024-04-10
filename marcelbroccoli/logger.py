@@ -156,7 +156,7 @@ if __name__ == "__main__":
     # start log
     logger.info("Welcome to the Logger Test Script.")
     logger.info("Log file is '{}'".format(log_file))
-    print("Log level: {}".format(marcellg.logger.level))
+    print("Log level: {}".format(logger.level))
 
     logger.info("Script execution completed with exit code {}.".format(errorcode))
     sys.exit(errorcode)

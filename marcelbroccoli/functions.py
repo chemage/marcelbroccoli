@@ -12,6 +12,20 @@ from . import logger
 
 
 '''
+Load configuration file.
+'''
+def load_config_file(cfg_file:str):
+  cfg = None
+  try:
+    with open(cfg_file) as f:
+      cfg = json.load(f)
+  except Exception as e:
+    logger.log("Error: could not load configuration file '{}'. {}".format(cfg_file, e))
+
+  return cfg
+
+
+'''
 Set working dir to folder and return working_dir
 '''
 def set_working_dir(folder:str) -> str:
